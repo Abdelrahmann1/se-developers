@@ -92,6 +92,7 @@
     height: auto;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    
   }
   
   /* Responsive: Stack on mobile */
@@ -455,77 +456,48 @@
   }
   
   .unit-item img {
-    width: 100%;
+    width: 80%;
     height: 200px;
     object-fit: cover;
   }
-  /* ✅ Flashing or pulse animation on mobile */
-@media (max-width: 768px) {
-  .unit-item {
-    animation: flash 2s ease-in-out infinite alternate;
-  }
+/* ✅ Extra slow & subtle popup animation for icons */
+.unit-item {
+  animation: popup 18s ease-in-out infinite; /* ⏳ slower by ~70% */
+  animation-delay: calc(var(--random-delay) * 1s);
+  transform-origin: center;
 }
 
-/* Flash animation */
-@keyframes flash {
+/* ✅ Much smoother and smaller popup range */
+@keyframes popup {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 5px rgba(32, 23, 71, 0.2);
+    box-shadow: 0 0 4px rgba(32, 23, 71, 0.15);
   }
   50% {
-    transform: scale(1.04);
-    box-shadow: 0 0 20px rgba(32, 23, 71, 0.8);
+    transform: scale(1.15); /* ↓ reduced popup range by 50% (was 1.3) */
+    box-shadow: 0 0 15px rgba(32, 23, 71, 0.35);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 5px rgba(32, 23, 71, 0.2);
+    box-shadow: 0 0 4px rgba(32, 23, 71, 0.15);
   }
-
 }
 
-  /* Location Section */
-  .location-section {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 60px 5%;
-    gap: 40px;
-    align-items: center;
-    text-align: center;
+/* ✅ Randomized start delay for each icon */
+.unit-item:nth-child(1) { --random-delay: 0; }
+.unit-item:nth-child(2) { --random-delay: 2.2; }
+.unit-item:nth-child(3) { --random-delay: 4.5; }
+.unit-item:nth-child(4) { --random-delay: 6.8; }
+.unit-item:nth-child(5) { --random-delay: 9.1; }
+.unit-item:nth-child(6) { --random-delay: 7.3; }
+
+/* ✅ Even slower on mobile for more calm effect */
+@media (max-width: 768px) {
+  .unit-item {
+    animation-duration: 25s; /* 🐢 extra slow for mobile */
   }
-  
-  .map img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-  }
-  
-  .location-info {
-    flex: 1;
-    min-width: 300px;
-  }
-  
-  .location-info h2 {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-    position: relative;
-  }
-  
-  .location-info h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--primary);
-    margin: 15px auto;
-  }
-  
-  .location-info p {
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    text-align: right;
-  }
+}
+
   
   /* Services */
   .services {
@@ -1008,4 +980,79 @@
     width: 100%;
     display: block;
   }
+}
+.projects-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  background: #f8f8f8;
+  text-align: center;
+  font-family: "Tajawal", sans-serif;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  color: #201747;
+  font-size: 1.3rem;
+  margin: 15px 0 5px;
+}
+
+.project-card p {
+  color: #555;
+  font-size: 0.95rem;
+  padding: 0 15px 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+
+.whatsapp-btn,
+.discover-btn {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+}
+
+.whatsapp-btn:hover {
+  background: #1EBE57;
+}
+
+.discover-btn {
+  background: #FFD15C;
+  color: #201747;
+}
+
+.discover-btn:hover {
+  background: #E6B84E;
 }
