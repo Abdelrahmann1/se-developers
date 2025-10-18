@@ -498,6 +498,9 @@
   .unit-item {
     animation-duration: 25s; /* 🐢 extra slow for mobile */
   }
+  #form1submit{
+    width: 100% !important;
+  }
 }
 
   
@@ -625,6 +628,9 @@
   
   .footer-logo img {
     height: 80px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 7px;
   }
   
   .footer-contact h3 {
@@ -1069,4 +1075,15 @@
 }
 .w-40px{
   width: 40px;
+}
+.whats-btn{
+  display: flex !important;
+  align-self: center;
+  gap: 5px !important;
+  background-color: #25D366 !important;
+  color: white !important;
+}
+.what-btn-img{
+  width: 25px !important; 
+  height: 25px !important;
 }
