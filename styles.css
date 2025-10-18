@@ -82,13 +82,15 @@
   .hero-image {
     flex: 1;
     min-width: 300px;
+    gap: 5%;
     display: flex;
     justify-content: center;
   }
   
   .hero-image img {
-    width: 40%;
-    max-width: 500px;
+    /* width: 40%; */
+    max-width:40%;
+    
     height: auto;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -562,6 +564,7 @@
   
   /* Other Projects */
   .other-projects {
+    font-family: 'Tajawal', sans-serif !important;
     padding: 60px 5%;
     background: var(--bg-gray);
     text-align: center;
@@ -572,6 +575,7 @@
     color: var(--primary);
     margin-bottom: 20px;
     position: relative;
+    text-align: center !important; color: #543A14 !important; margin-bottom: 20px !important;
   }
   
   .other-projects h2::after {
@@ -584,10 +588,9 @@
   }
   
   .other-projects p {
-    font-size: 1.1rem;
-    color: var(--text-dark);
     max-width: 800px;
     margin: 0 auto 30px;
+    font-size: 18px; line-height: 1.8; color: #333;
   }
   
   .other-projects ul {
@@ -1055,4 +1058,15 @@
 
 .discover-btn:hover {
   background: #E6B84E;
+}
+
+
+.strongphoto{
+  font-size: larger;
+}
+.logowhite{
+  color: white;
+}
+.w-40px{
+  width: 40px;
 }
